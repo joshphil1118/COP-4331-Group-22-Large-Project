@@ -1,8 +1,8 @@
-# COP-4331-Group-22-Large-Project
+# COP-4331-Group-21-Large-Project
 
-## Project: Roulette game (just for project purpose not an actual game launch, NOT USING REAL MONEY)
+## Project: Roulette game (NOT USING REAL MONEY)
 
-This repository contains the source code and documentation for the COP 4331 Group 22 big Project.
+This repository contains the source code and documentation for the COP 4331 Group 21 big Project.
 
 Check it out [here](http://cop433103.com/).
 

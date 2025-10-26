@@ -1,0 +1,14 @@
+# Backend environment
+.env
+.env.*
+
+# Backend dependencies
+node_modules/
+
+# Backend logs
+*.log
+npm-debug.log*
+
+# Runtime
+*.pid
+.DS_Store
