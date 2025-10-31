@@ -1,0 +1,9 @@
+.auth-field {
+    height: 4em;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 2em;
+    width: 80%;
+    background: white;
+    color: black;
+}
