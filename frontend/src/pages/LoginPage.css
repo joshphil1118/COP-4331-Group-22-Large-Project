@@ -1,0 +1,10 @@
+.login-container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 5%;
+
+    color: black;
+    min-width: 500px;
+
+    transition: max-height 0.5s ease-in-out;
+}

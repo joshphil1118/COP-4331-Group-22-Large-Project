@@ -1,0 +1,28 @@
+.auth-field {
+    height: 4em;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 1em;
+    width: 90%;
+    background: white;
+    color: black;
+}
+
+.auth-field:focus {
+    box-shadow: 0 2px 4px #888;
+    border-width: 1px;
+    border-color: rgb(5, 84, 189);
+}
+
+.signup-buttons {
+    height: 4em;
+    width: 90%;
+    border-radius: 1em;
+    background-color: rgb(10, 116, 255);
+    border-width: 0;
+}
+
+.signup-buttons:hover {
+    box-shadow: 0 2px 4px #888;
+    background-color: rgb(5, 84, 189);
+}
