@@ -10,7 +10,7 @@ const LoginPage = () =>
     return(
       <div>
         <VideoBackground />
-        <div className='login-container'>
+        <div className='login-container vh-centered-div'>
           <PageTitle />
           <Login />
         </div>

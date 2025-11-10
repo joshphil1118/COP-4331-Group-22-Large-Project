@@ -3,7 +3,7 @@
     padding: 1em;
     margin-bottom: 1em;
     border-radius: 1em;
-    width: 90%;
+    width: 100%;
     background: white;
     color: black;
 }
@@ -16,7 +16,7 @@
 
 .signup-buttons {
     height: 4em;
-    width: 90%;
+    width: 100%;
     border-radius: 1em;
     background-color: rgb(10, 116, 255);
     border-width: 0;

@@ -3,8 +3,17 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 95%;
+  align-self: flex-start;
 }
 
+.vh-centered-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* 
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -52,4 +61,4 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-}
+} */
