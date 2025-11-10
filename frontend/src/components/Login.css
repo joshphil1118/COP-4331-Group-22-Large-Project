@@ -1,11 +1,12 @@
 .auth-field {
-    height: 32px;
+    height: 64px;
     padding: 16px;
     margin-bottom: 16px;
     border-radius: 16px;
-    width: 90%;
+    width: 100%;
     background: white;
     color: black;
+    box-sizing: border-box;
 }
 
 .auth-field:focus {
