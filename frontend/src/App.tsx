@@ -4,14 +4,14 @@ import './App.css';
 import LoginPage from './pages/LoginPage';
 import CardPage from './pages/CardPage';
 import GamePage from './pages/Game';
-import RoulettePage from './pages/roulette';
+import RoulettePage from './pages/Roulette';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/cards" element={<CardPage />} />
+        {/* <Route path="/cards" element={<CardPage />} /> */}
         <Route path="/game" element={<GamePage />} />
         <Route path="/roulette" element={<RoulettePage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
