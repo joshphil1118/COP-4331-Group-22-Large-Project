@@ -1,0 +1,41 @@
+#roulette-header {
+    /* text-align: center; */
+    background-color: rgb(52, 59, 75);
+    border-radius: 12px;
+
+    /* border-color: red; */
+    width: 95%;
+
+    margin: 5px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    align-self: flex-start;
+}
+
+#logout-div {
+    /* border: 1px solid red; */
+    min-width: 64px;
+    width: 15%;
+}
+
+#username-div {
+    margin-left: 16px;
+    /* border: 1px solid red; */
+}
+
+#logout-button {
+    width: 100%;
+}
+
+/* #header-div {
+    background:rgb(219, 14, 14);
+    /* background-color: aqua;
+} */
+
+input {
+    font-size: 16px;
+}
