@@ -1,9 +1,9 @@
 .auth-field {
-    height: 4em;
-    padding: 1em;
-    margin-bottom: 1em;
-    border-radius: 1em;
-    width: 95%;
+    height: 32px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    width: 90%;
     background: white;
     color: black;
 }
@@ -15,14 +15,16 @@
 }
 
 .signup-buttons {
-    height: 4em;
+    height: 64px;
     width: 100%;
     border-radius: 1em;
     background-color: rgb(10, 116, 255);
     border-width: 0;
+    transition: border-radius 0.15s ease-in;
 }
 
 .signup-buttons:hover {
     box-shadow: 0 2px 4px #888;
     background-color: rgb(5, 84, 189);
+    border-radius: 4px;
 }

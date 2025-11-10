@@ -168,11 +168,11 @@ function Login()
       <div id="loginDiv">
         {isLogin ? (
           <>
-          <h3 id="inner-title">Login</h3><br />
+          <h3 id="inner-title">Login</h3>
           <span id="loginResult">{message}</span>
-          <input className='auth-field' type="text" id="loginName" placeholder="Username" value={loginName} onChange={handleSetLoginName} /><br />
-          <input className='auth-field' type="password" id="loginPassword" placeholder="Password" value={loginPassword} onChange={handleSetPassword} /><br />
-          <input type="submit" id="loginButton" className="signup-buttons" value = "Login" onClick={doLogin} /><br />
+          <input className='auth-field' type="text" id="loginName" placeholder="Username" value={loginName} onChange={handleSetLoginName} />
+          <input className='auth-field' type="password" id="loginPassword" placeholder="Password" value={loginPassword} onChange={handleSetPassword} />
+          <input type="submit" id="loginButton" className="signup-buttons" value = "Login" onClick={doLogin} />
           <p className='login-toggle'>
             Don't have an account? &nbsp;
             <a className='login-toggle-link' onClick={() => {
@@ -188,14 +188,14 @@ function Login()
           </>
         ) : (
           <>
-          <h3 id="inner-title">Sign Up</h3><br />
+          <h3 id="inner-title">Sign Up</h3>
           <span id="loginResult">{message}</span>
-          <input className='auth-field' type='text' id='signupFirstName' placeholder='First Name' value={userFirstName} onChange={handleSetFirstName} /><br />
-          <input className='auth-field' type='text' id='signupLastName' placeholder='Last Name' value={userLastName} onChange={handleSetLastName} /><br />
-          <input className='auth-field' type='text' id='signupEmail' placeholder='Email' value={userEmail} onChange={handleSetEmail} /><br />
-          <input className='auth-field' type="text" id="signupName" placeholder="Username" value={loginName} onChange={handleSetLoginName} /><br />
-          <input className='auth-field' type="password" id="signupPassword" placeholder="Password" value={loginPassword} onChange={handleSetPassword} /><br />
-          <input type="submit" id="signupButton" className="signup-buttons" value = "Sign Up" onClick={doRegister} /><br />
+          <input className='auth-field' type='text' id='signupFirstName' placeholder='First Name' value={userFirstName} onChange={handleSetFirstName} />
+          <input className='auth-field' type='text' id='signupLastName' placeholder='Last Name' value={userLastName} onChange={handleSetLastName} />
+          <input className='auth-field' type='text' id='signupEmail' placeholder='Email' value={userEmail} onChange={handleSetEmail} />
+          <input className='auth-field' type="text" id="signupName" placeholder="Username" value={loginName} onChange={handleSetLoginName} />
+          <input className='auth-field' type="password" id="signupPassword" placeholder="Password" value={loginPassword} onChange={handleSetPassword} />
+          <input type="submit" id="signupButton" className="signup-buttons" value = "Sign Up" onClick={doRegister} />
           <p className='login-toggle'>
             Already have an account? &nbsp;
             <a className='login-toggle-link' onClick={() => {
