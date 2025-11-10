@@ -3,7 +3,7 @@ import './App.css';
 
 import LoginPage from './pages/LoginPage';
 import CardPage from './pages/CardPage';
-import GamePage from './pages/Game';
+// import GamePage from './pages/Game';
 import RoulettePage from './pages/Roulette';
 
 function App() {
