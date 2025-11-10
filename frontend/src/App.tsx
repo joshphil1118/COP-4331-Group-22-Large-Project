@@ -11,8 +11,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        {/* <Route path="/cards" element={<CardPage />} /> */}
-        <Route path="/game" element={<GamePage />} />
+        <Route path="/cards" element={<CardPage />} />
+        {/* <Route path="/game" element={<GamePage />} /> */}
         <Route path="/roulette" element={<RoulettePage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
