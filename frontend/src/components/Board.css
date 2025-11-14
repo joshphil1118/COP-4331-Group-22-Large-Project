@@ -163,6 +163,7 @@
     display: grid;
     grid-template-columns: repeat(13, 1fr);
     gap: 4px;
+    margin-bottom: 16px;
 }
 
 .outside-bet-button {
@@ -171,4 +172,8 @@
 
 .outside-bet-button:hover:not(:disabled) {
     transform: translateY(-2px);
+}
+
+#clear-bets-button {
+    width: 100%;
 }

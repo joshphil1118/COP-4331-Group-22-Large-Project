@@ -138,7 +138,18 @@ const Board: React.FC<BoardProps> = ({balance, currentBet, onPlaceBet, onClearBe
                     >19-36</button>
                 </div>
 
+                <button
+                    id="clear-bets-button"
+                    className="bet-button"
+                    onClick={onClearBets}
+                    disabled={disabled || currentBet === 0}
+                >
+                    Clear Bets
+                </button>
+
             </div>
+
+
 
 
 
