@@ -7,10 +7,12 @@ import Logout from "./Logout"
 function AppHeader()
 {
     return (
-        <header id="roulette-header">
-            <ActiveUsername />
-            <Logout />
-        </header>
+        <div id="app-header">
+            <header id="roulette-header">
+                <ActiveUsername />
+                <Logout />
+            </header>
+        </div>
     )
 }
 

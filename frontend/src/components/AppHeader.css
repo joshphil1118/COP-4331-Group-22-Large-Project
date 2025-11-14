@@ -1,12 +1,16 @@
+#app-header {
+    background-color: #191f3b;
+}
+
 #roulette-header {
     /* text-align: center; */
-    background-color: rgb(52, 59, 75);
+    /* background-color: rgb(52, 59, 75); */
     border-radius: 12px;
 
     /* border-color: red; */
-    width: 95%;
+    /* width: 95%; */
 
-    margin: 5px;
+    /* margin: 5px; */
 
     display: flex;
     justify-content: space-between;
@@ -14,6 +18,11 @@
     padding: 10px;
 
     align-self: flex-start;
+
+    max-width: 1280px;
+    margin: 0 auto;
+    /* width: 95%; */
+    padding-inline: 2rem;
 }
 
 #logout-div {
@@ -29,13 +38,5 @@
 
 #logout-button {
     width: 100%;
+    /* background-color: aqua; */
 }
-
-/* #header-div {
-    background:rgb(219, 14, 14);
-    /* background-color: aqua;
-} */
-
-/* input {
-    font-size: 16px;
-} */
