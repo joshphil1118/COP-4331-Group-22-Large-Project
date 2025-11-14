@@ -6,6 +6,8 @@ import { storeToken } from '../tokenStorage';
 import { jwtDecode } from 'jwt-decode';
 import type { JwtPayload } from 'jwt-decode'; // Add 'type' keyword
 
+import { useNavigate } from 'react-router-dom';
+
 import './Login.css'
 
 // Add this interface
@@ -17,14 +19,15 @@ interface CustomJwtPayload extends JwtPayload {
 
 function Login()
 {
-  const [message,setMessage] = useState('');
-  const [loginName,setLoginName] = React.useState('');
-  const [loginPassword,setPassword] = React.useState('');
-  const [userFirstName, setFirstName] = React.useState('');
-  const [userLastName, setLastName] = React.useState('');
-  const [userEmail, setEmail] = React.useState('');
+    const navigate = useNavigate();
+    const [message,setMessage] = useState('');
+    const [loginName,setLoginName] = React.useState('');
+    const [loginPassword,setPassword] = React.useState('');
+    const [userFirstName, setFirstName] = React.useState('');
+    const [userLastName, setLastName] = React.useState('');
+    const [userEmail, setEmail] = React.useState('');
 
-  const [isLogin, setIsLogin] = useState(true);
+    const [isLogin, setIsLogin] = useState(true);
 
     async function doLogin(event:any) : Promise<void>
     {
@@ -36,16 +39,16 @@ function Login()
         try
         {    
             const response = await fetch(buildPath('api/login'), {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
-  
+            
             //var res = JSON.parse(await response.text());
             var res = await response.json();
-
+            
             // check if api returned an error
-            if (res.error !== '') {
+            if (res.error && res.error !== '') {
                 setMessage(res.error);
                 return;
             }
-
+            
             //Checks if login was successful (accessToken exists)
             if (!res.accessToken) {
                 // No token means login failed
@@ -58,6 +61,7 @@ function Login()
 
             //Uses the custom type
             const decoded = jwtDecode<CustomJwtPayload>(accessToken);
+
 
         try
         {
@@ -74,9 +78,9 @@ function Login()
           {
             var user = {firstName:firstName,lastName:lastName,id:userId}
             localStorage.setItem('user_data', JSON.stringify(user));
-      
+            
             setMessage('');
-            window.location.href = '/roulette';
+            navigate('/roulette');
           }
           }
           catch(e)
@@ -168,11 +172,11 @@ function Login()
       <div id="loginDiv">
         {isLogin ? (
           <>
-          <h3 id="inner-title">Login</h3><br />
+          <h3 id="inner-title">Login</h3>
           <span id="loginResult">{message}</span>
-          <input className='auth-field' type="text" id="loginName" placeholder="Username" value={loginName} onChange={handleSetLoginName} /><br />
-          <input className='auth-field' type="password" id="loginPassword" placeholder="Password" value={loginPassword} onChange={handleSetPassword} /><br />
-          <input type="submit" id="loginButton" className="signup-buttons" value = "Login" onClick={doLogin} /><br />
+          <input className='auth-field' type="text" id="loginName" placeholder="Username" value={loginName} onChange={handleSetLoginName} />
+          <input className='auth-field' type="password" id="loginPassword" placeholder="Password" value={loginPassword} onChange={handleSetPassword} />
+          <input type="submit" id="loginButton" className="signup-buttons" value = "Login" onClick={doLogin} />
           <p className='login-toggle'>
             Don't have an account? &nbsp;
             <a className='login-toggle-link' onClick={() => {
@@ -188,14 +192,14 @@ function Login()
           </>
         ) : (
           <>
-          <h3 id="inner-title">Sign Up</h3><br />
+          <h3 id="inner-title">Sign Up</h3>
           <span id="loginResult">{message}</span>
-          <input className='auth-field' type='text' id='signupFirstName' placeholder='First Name' value={userFirstName} onChange={handleSetFirstName} /><br />
-          <input className='auth-field' type='text' id='signupLastName' placeholder='Last Name' value={userLastName} onChange={handleSetLastName} /><br />
-          <input className='auth-field' type='text' id='signupEmail' placeholder='Email' value={userEmail} onChange={handleSetEmail} /><br />
-          <input className='auth-field' type="text" id="signupName" placeholder="Username" value={loginName} onChange={handleSetLoginName} /><br />
-          <input className='auth-field' type="password" id="signupPassword" placeholder="Password" value={loginPassword} onChange={handleSetPassword} /><br />
-          <input type="submit" id="signupButton" className="signup-buttons" value = "Sign Up" onClick={doRegister} /><br />
+          <input className='auth-field' type='text' id='signupFirstName' placeholder='First Name' value={userFirstName} onChange={handleSetFirstName} />
+          <input className='auth-field' type='text' id='signupLastName' placeholder='Last Name' value={userLastName} onChange={handleSetLastName} />
+          <input className='auth-field' type='text' id='signupEmail' placeholder='Email' value={userEmail} onChange={handleSetEmail} />
+          <input className='auth-field' type="text" id="signupName" placeholder="Username" value={loginName} onChange={handleSetLoginName} />
+          <input className='auth-field' type="password" id="signupPassword" placeholder="Password" value={loginPassword} onChange={handleSetPassword} />
+          <input type="submit" id="signupButton" className="signup-buttons" value = "Sign Up" onClick={doRegister} />
           <p className='login-toggle'>
             Already have an account? &nbsp;
             <a className='login-toggle-link' onClick={() => {
