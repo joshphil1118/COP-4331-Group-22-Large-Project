@@ -2,10 +2,11 @@ import {useState} from "react";
 
 import AppHeader from "../components/AppHeader";
 import Board, {type Bet} from "../components/Board"
+import ActiveBets from "../components/ActiveBets";
 
 import "./Roulette.css"
 
-interface PlacedBet extends Bet {
+export interface PlacedBet extends Bet {
   id: number;
 }
 
@@ -43,8 +44,19 @@ function Roulette()
             <AppHeader />
             <div id="roulette-content">
 
-                <h2>Bank</h2>
-                <h2>Wheel</h2>
+                <div className="roulette-page-section">
+                    <h2 className="header-row">Bank</h2>
+                    <div className="row">
+                        
+                    </div>
+                </div>
+
+                <div className="roulette-page-section">
+                    <h2 className="header-row">Wheel</h2>
+                    <div className="row">
+                        
+                    </div>
+                </div>
 
                 <div className="roulette-page-section">
 
@@ -60,7 +72,12 @@ function Roulette()
                     </div>
                 </div>
 
-                <h2>Current Bets</h2>
+                <div className="roulette-page-section">
+                    <h2 className="header-row">Current Bets</h2>
+                    <div className="row">
+                        <ActiveBets bets={bets}/>
+                    </div>
+                </div>
 
                 <h2>Sidebar Leaderboard</h2>
             </div>
