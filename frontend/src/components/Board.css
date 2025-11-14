@@ -1,0 +1,56 @@
+#main-number-buttons {
+    display: grid;
+    gap: 4px;
+    
+    @media only screen and (max-width: 800px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media only screen and (min-width: 800px) {
+        grid-template-columns: repeat(13, 1fr);
+    }
+}
+
+#zero-button {
+    background-color: green;
+
+    @media only screen and (max-width: 800px) {
+        grid-column: 1 / span 3;
+        grid-row: 1;
+    }
+    
+    @media only screen and (min-width: 800px) {
+        grid-column: 1;
+        grid-row: 1 / span 3;
+    }
+}
+
+.number-button {
+    border-color: rgb(0, 172, 172);
+    border-width: 2px;
+    border-radius: 8px;
+
+    padding: 8px;
+
+    transition: all 0.1s ease;
+
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.number-button:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+}
+
+.number-button:hover:not(:disabled) {
+    transform: scale(1.1);
+    border-color: aqua;
+}
+
+.red-button {
+    background-color: rgb(167, 37, 37);
+}
+
+
+
