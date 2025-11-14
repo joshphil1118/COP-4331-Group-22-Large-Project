@@ -18,7 +18,7 @@ interface BoardProps {
 
 
 const Board: React.FC<BoardProps> = ({balance, currentBet, onPlaceBet, onClearBets, disabled}) => {
-    const [chipValue, setChipValue] = useState(10);
+    const [chipValue, setChipValue] = useState(1);
 
     const numbers = Array.from({length: 36}, (_, i) => i + 1);
 
@@ -34,25 +34,58 @@ const Board: React.FC<BoardProps> = ({balance, currentBet, onPlaceBet, onClearBe
         onPlaceBet({ type: 'straight', value: num, amount: chipValue });
     };
 
+    const handleColorClick = (color: string) => {
+        if (disabled || chipValue > balance) return;
+        onPlaceBet({ type: 'color', value: color, amount: chipValue})
+    }
+
+    const handleEvenOddClick = (range: string) => {
+        if (disabled || chipValue > balance) return;
+        onPlaceBet({ type: 'evenOdd', value: range, amount: chipValue})
+    }
+
+    const handleRangeClick = (range: string) => {
+        if (disabled || chipValue > balance) return;
+        onPlaceBet({ type: 'range', value: range, amount: chipValue})
+    }
+
     return (
         <div id="board">
-            <div id="board-info">
-                <div id="balance">Balance: ¤{balance}</div>
-                <div id="current-bet">Current Bet: ¤{currentBet}</div>
-            </div>
 
-            <div className="chips">
-            
-            </div>
+            <div id="board-subheader">
 
-            
+                <div id="chip-selecter">
+                    {[1, 5, 25, 100, 500, 1000].map(value => (
+                        <button
+                        key={value}
+                        id={`chip-${value}`}
+                        className={`chip ${chipValue === value ? "selected": ''}`}
+                        onClick={() => setChipValue(value)}
+                        disabled={disabled}
+                        >
+                            ¤{value}
+                        </button>
+                    ))}
+                </div>
+                <div id="board-bet-info-area">
+                    <div className="board-bet-info">
+                        Balance:
+                        ¤{balance}
+                    </div>
+                    <div className="board-bet-info">
+                        Current Bet:
+                        ¤{currentBet}
+                    </div>
+                </div>
+            </div>
 
             <div id="betting-area">
-                <div id="main-number-buttons">
+
+                <div id="inside-bets">
                     <button
                         key="0"
                         id="zero-button"
-                        className="number-button"
+                        className="bet-button number-button"
                         onClick={() => handleNumberClick(0)}
                         disabled={disabled}
                     >
@@ -62,7 +95,7 @@ const Board: React.FC<BoardProps> = ({balance, currentBet, onPlaceBet, onClearBe
                     {numbers.map(num => (
                         <button
                             key={num}
-                            className={`number-button ${getNumberColor(num)}-button`}
+                            className={`bet-button number-button ${getNumberColor(num)}-bet-button`}
                             onClick={() => handleNumberClick(num)}
                             disabled={disabled}
                         >
@@ -70,6 +103,41 @@ const Board: React.FC<BoardProps> = ({balance, currentBet, onPlaceBet, onClearBe
                         </button>
                     ))}                    
                 </div>
+                
+                <div id="outside-bets">
+                    <div></div>
+                    <button
+                        className="bet-button outside-bet-button"
+                        onClick={() => handleRangeClick('1-18')}
+                        disabled={disabled}
+                    >1-18</button>
+                    <button
+                        className="bet-button outside-bet-button"
+                        onClick={() => handleEvenOddClick('even')}
+                        disabled={disabled}
+                    >EVEN</button>
+                    <button
+                        className="bet-button outside-bet-button red-bet-button"
+                        onClick={() => handleColorClick('red')}
+                        disabled={disabled}
+                    >RED</button>
+                    <button
+                        className="bet-button outside-bet-button"
+                        onClick={() => handleColorClick('black')}
+                        disabled={disabled}
+                    >BLACK</button>
+                    <button
+                        className="bet-button outside-bet-button"
+                        onClick={() => handleEvenOddClick('odd')}
+                        disabled={disabled}
+                    >ODD</button>
+                    <button
+                        className="bet-button outside-bet-button"
+                        onClick={() => handleRangeClick('19-36')}
+                        disabled={disabled}
+                    >19-36</button>
+                </div>
+
             </div>
 
 
