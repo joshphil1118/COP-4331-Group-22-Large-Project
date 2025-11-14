@@ -58,10 +58,10 @@ const Board: React.FC<BoardProps> = ({balance, currentBet, onPlaceBet, onClearBe
                     {[1, 5, 25, 100, 500, 1000].map(value => (
                         <button
                         key={value}
-                        id={`chip-${value}`}
                         className={`chip ${chipValue === value ? "selected": ''}`}
                         onClick={() => setChipValue(value)}
                         disabled={disabled}
+                        style={{backgroundColor: `var(--chip-${value}-color)`}}
                         >
                             ¤{value}
                         </button>

@@ -9,5 +9,10 @@
   background: #2e4458;
   padding: 10px 15px;
   border-radius: 8px;
-  border-left: 3px solid rgb(0, 172, 172);
+  /* border-left: 3px solid rgb(0, 172, 172); */
+}
+
+#active-bets li:hover {
+    text-decoration: line-through;
+    cursor: pointer;
 }

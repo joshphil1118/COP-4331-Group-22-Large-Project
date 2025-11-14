@@ -75,30 +75,6 @@
     scale: 1.1;
 }
 
-#chip-1 {
-    background-color: gray;
-}
-
-#chip-5 {
-    background-color: red;
-}
-
-#chip-25 {
-    background-color: rgb(15, 145, 3);
-}
-
-#chip-100 {
-    background-color: black;
-}
-
-#chip-500 {
-    background-color: purple;
-}
-
-#chip-1000 {
-    background-color: rgb(153, 101, 4);
-}
-
 .bet-button{
     border-color: rgb(0, 172, 172);
     border-width: 2px;

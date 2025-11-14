@@ -39,6 +39,15 @@ function Roulette()
         // setMessage('All bets cleared');
     };
 
+    const handleRemoveBet = (id: number) => {
+        const betToRemove = bets.find(bet => bet.id === id);
+        
+        if (betToRemove) {
+            setBalance(balance + betToRemove.amount);
+            setBets(bets.filter(bet => bet.id !== id));
+        }
+    };
+
     return (
         <div>
             <AppHeader />
@@ -75,7 +84,7 @@ function Roulette()
                 <div className="roulette-page-section">
                     <h2 className="header-row">Current Bets</h2>
                     <div className="row">
-                        <ActiveBets bets={bets}/>
+                        <ActiveBets bets={bets} onRemoveBet={handleRemoveBet}/>
                     </div>
                 </div>
 
